@@ -8,3 +8,5 @@ if (isset($_SESSION['rand'])) {
 } else {
     $_SESSION['rand'] = 'abobus';
 }
+$session_temp = $_SESSION;
+session_write_close();
