@@ -10,3 +10,6 @@ if (isset($_SESSION['rand'])) {
 }
 $session_temp = $_SESSION;
 session_write_close();
+function validate_input($text) {
+    return htmlspecialchars(trim($text));
+}
