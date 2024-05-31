@@ -15,8 +15,8 @@ if (isset($query['id'])) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $query = $con->prepare("INSERT INTO users (login, password) VALUES (?, ?)");
     $query->execute([$login, $hashed_password]);
+    $_SESSION['popup'] = "Успешная регистрация!";
 }
 session_write_close();
 header("location: index.php");
 exit;
-// password_verify($input_password, $user['password'])
